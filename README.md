@@ -9,6 +9,7 @@ The development of intelligent AI agents has gained significant attention in rec
 ## 2. HITARA Framework
 The HITARA framework consists of the following key components:
 
+![Hierarchical Task Representation in HITARA](/images/hierarchical_task_representation.png)
 ### 2.1 Hierarchical Task Representation
 Tasks are represented using a hierarchical tree-like structure, where each node corresponds to a task or sub-task. The tree captures the decomposition of tasks, with the root node representing the high-level task and the leaf nodes representing the base tasks that can be directly solved. The edges between nodes represent the decomposition relationships and the ordering of sub-tasks.
 
