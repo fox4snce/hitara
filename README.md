@@ -108,5 +108,6 @@ End Procedure
 
 Procedure ProcessTasksDepthFirst(SubTasks)
     // Process the SubTasks in a depth-first manner following the task ordering
-End Procedure```
+End Procedure
+```
 
