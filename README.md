@@ -65,3 +65,48 @@ Both approaches to human-AI collaboration in base task creation offer significan
 Furthermore, this collaborative approach fosters a symbiotic relationship between the human operator and the AI agent. The human operator's domain knowledge and problem-solving skills are leveraged to guide and enhance the AI agent's learning process, while the AI agent's ability to process vast amounts of information and identify patterns assists the human operator in discovering potential base tasks.
 
 As HITARA continues to evolve and be applied to various domains, the integration of human-AI collaboration in base task creation will play a crucial role in accelerating the system's development and expanding its capabilities. By harnessing the strengths of both human expertise and AI algorithms, HITARA can more quickly become a powerful and versatile tool for tackling complex problems and automating tasks across diverse fields.
+
+## Addendum: Algorithms
+
+```Algorithm: Intelligent Task Decomposition
+Input: High-Level Task H, Maximum Decomposition Limit N
+Output: Ordered Task Decomposition Tree
+
+Procedure DecomposeTask(H, N)
+    EmbedTask ← Embed(H)
+    SimilarTasks ← SearchForSimilarTasks(EmbedTask)
+    TopSimilarTasks ← SelectTopSimilarTasks(SimilarTasks)
+    
+    for Each Task in TopSimilarTasks do
+        Match ← CompareTasksWithLLM(Task, H)
+        if Match is Exact then
+            LinkToExactMatch(H, Task)
+            IncrementUsage(Task)
+            return
+        end if
+    end for
+
+    if Not ExactMatchFound then
+        SubTasks ← DecomposeIntoSubTasks(H, N)
+        for Each SubTask in SubTasks do
+            DecomposeTask(SubTask, N)
+        end for
+    end if
+    
+    OrderSubTasks(SubTasks)
+    ProcessTasksDepthFirst(SubTasks)
+End Procedure
+
+Procedure LinkToExactMatch(CurrentTask, MatchedTask)
+    // Link CurrentTask to MatchedTask in the knowledge base
+    // and increment the "times-successfully-used" for MatchedTask
+End Procedure
+
+Procedure OrderSubTasks(SubTasks)
+    // Orders SubTasks based on criteria such as dependencies, priority, etc.
+End Procedure
+
+Procedure ProcessTasksDepthFirst(SubTasks)
+    // Process the SubTasks in a depth-first manner following the task ordering
+End Procedure```
+
